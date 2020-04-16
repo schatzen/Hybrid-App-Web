@@ -1,0 +1,16 @@
+package mystrategy;
+
+public interface Flys {
+	
+	String fly();
+
+}
+
+public String  ItFlys implements Flys {
+
+	@Override
+	public String fly() {
+		return "I can FLY";
+	}
+	
+}

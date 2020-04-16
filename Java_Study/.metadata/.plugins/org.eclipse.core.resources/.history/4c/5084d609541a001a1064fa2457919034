@@ -1,0 +1,11 @@
+package mystrategy;
+
+public class PlayFly {
+	
+	public static void main(String[] args) {
+		Animal spooky = new Dog();
+		Animal tweety = new Bird();
+		
+	}
+
+}

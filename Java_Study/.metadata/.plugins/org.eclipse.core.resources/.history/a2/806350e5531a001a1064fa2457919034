@@ -1,0 +1,9 @@
+package mystrategy;
+
+public class Bird extends Animal {
+
+	public Bird() {
+		FLys fly = new ItFlys();
+	}
+
+}

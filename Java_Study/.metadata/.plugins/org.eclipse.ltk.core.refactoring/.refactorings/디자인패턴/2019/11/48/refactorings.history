@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;mystrategy.자료구조&apos; to &apos;Ainterface&apos;&#x0D;&#x0A;- Original project: &apos;디자인패턴&apos;&#x0D;&#x0A;- Original element: &apos;mystrategy.자료구조&apos;&#x0D;&#x0A;- Renamed element: &apos;mystrategy.Ainterface&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;자료구조&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;mystrategy{자료구조.java[자료구조" matchStrategy="1" name="Ainterface" qualified="false" references="true" similarDeclarations="false" stamp="1574746996102" textual="false" version="1.0"/>
+</session>

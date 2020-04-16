@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="_window">import javax.swing.JFrame;&#13;
+&#13;
+public class ${primary_type_name} extends JFrame {&#13;
+&#13;
+	public ${primary_type_name}() {&#13;
+		super("DEEP BREATHE");&#13;
+&#13;
+		// 위치&#13;
+		setLocation(200, 100);&#13;
+&#13;
+		// 크기&#13;
+		setSize(300, 300);&#13;
+&#13;
+		// 보여줘라&#13;
+		setVisible(true);&#13;
+&#13;
+		// 종료&#13;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#13;
+&#13;
+	}&#13;
+&#13;
+	public static void main(String[] args) {&#13;
+		// TODO Auto-generated method stub&#13;
+&#13;
+		new ${primary_type_name}();&#13;
+	}&#13;
+&#13;
+}</template></templates>

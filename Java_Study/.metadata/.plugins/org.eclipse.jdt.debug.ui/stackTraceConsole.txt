@@ -1,0 +1,4 @@
+
+	// »ó¼ö
+	public static final int GAMEPAN_W = 400;
+	public static final int GAMEPAN_H = 600;
