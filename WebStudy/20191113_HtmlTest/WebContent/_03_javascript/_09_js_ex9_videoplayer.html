@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   function play_music(){
+	  
+	   //재생해야될 값을 얻어오기
+	   //var src = $('#music_select').val(); //jQuery방식
+	   var src = document.getElementById("music_select").value;
+	   //document.title=src;
+	   
+	   //컨트롤 참조값 얻어오기
+	   //             
+	   var my_video = document.getElementById("my_video");
+	   
+	   my_video.src = src;//재생목록 넣기
+	   
+	   my_video.play();//재생하기
+	   
+   }
+</script>
+
+</head>
+<body>
+
+곡선택:<select id="music_select"  onchange="play_music();">
+           <option value="">::::재생할 곡선택:::</option>
+           <option value="../mp4/idle_lion.mp4">(IDLE)Lion</option>
+           <option value="../mp4/mamamoo_hip.mp4">(마마무)Hip</option>
+           <option value="../mp4/Noel_Late_Night.mp4">(노을)늦은 밤</option>
+       </select>
+<hr>
+<video id="my_video"
+       src=""
+       controls="controls"
+       width="400"
+       height="300">
+</video>
+
+
+</body>
+</html>

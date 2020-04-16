@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<action name="/visit/list"    
+	        class="action.mymvc.VisitListAction"/>
+	        
+	<action name="/visit/delete"  
+	        class="action.mymvc.VisitDeleteAction"/>
+	        
+	<action name="/visit/insert_form"  
+	        class="action.mymvc.VisitInsertFormAction"/>
+	        
+	<action name="/visit/insert"  
+	        class="action.mymvc.VisitInsertAction"/>
+	        
+	<action name="/visit/check_pwd"  
+	        class="action.mymvc.VisitCheckPwdAction"/>        
+</root>

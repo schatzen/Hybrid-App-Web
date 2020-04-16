@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;local_list.jsp&apos; to &apos;local_list.jsp&apos;&#x0D;&#x0A;- Original project: &apos;20191211_NaverOpenAPI_Local&apos;&#x0D;&#x0A;- Destination element: &apos;local_list.jsp&apos;&#x0D;&#x0A;- Original element: &apos;local_list.jsp&apos;" description="Copy file" element1="WebContent/local_list.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579229301502" target="/20191211_NaverOpenAPI_Local/WebContent/local_list.jsp" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//주민번호 정규식
+	var regular_jumin =/\d{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])-[1-8]\d{6}/;
+
+	function send(f){
+		
+		var jumin_no = f.jumin_no.value.trim();
+		
+		if(regular_jumin.test(jumin_no)==false){
+			alert('주민번호 형식이 틀립니다');
+			f.jumin_no.value='';
+			f.jumin_no.focus();
+			return;
+		}
+		
+		//전송
+		f.submit();
+		
+	}
+
+</script>
+</head>
+<body>
+
+	<form action="jumin.do">
+	   주민번호:<input name="jumin_no" value="801212-1234560">
+	            <input type="button"  value="확인" 
+	                   onclick="send(this.form);">
+	</form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- PersonVo p1 = new PersonVo("일길동",20,"서울시 마포구 창천동"); -->
+	
+	<!-- argument == parameter == 인자 -->
+	<!-- Constructor Injection (생성자 주입)-->
+	<bean  id="p1"  class="com.ts.test1.vo.PersonVo"  scope="singleton">
+		<constructor-arg value="일길동"/>
+		<constructor-arg value="20"/>
+		<constructor-arg value="서울시 마포구 창천동"/>
+	</bean>
+	
+	<!-- Setter Injection (세터이동 주입)  -->
+	
+	<!-- PersonVo p2 = new PersonVo();
+	     p2.setName("이길동");
+	 -->
+	<!--      scope="singleton" 또는 생략시 시작시 생성(singleton)
+	          scope="prototype" <=요청시마다 생성(프로그램 시작시는 생성안된다)    --> 
+	<bean  id="p2"  class="com.ts.test1.vo.PersonVo" scope="prototype">
+        <property name="name"  value="이길동"/><!-- Setter Call -->
+        <property name="age"   value="25"/>
+        <property name="addr"  value="서울 마포 노고산동"/>		
+	</bean>
+	
+	<!-- String nameBean = new String("삼길동"); -->	
+	<bean id="nameBean"  class="java.lang.String">
+		<constructor-arg value="삼길동"/>
+	</bean>	
+	
+	<!-- Integer ageBean  = new Integer(20); -->
+	<bean id="ageBean"  class="java.lang.Integer">
+	    <constructor-arg value="20"/>
+	</bean>	
+	
+	<!-- String addrBean = new String("서울 마포 연희동"); -->
+	<bean id="addrBean"  class="java.lang.String">
+		<constructor-arg value="서울 마포 연희동"/>
+	</bean>
+	
+	<!-- Contructor Injection -->
+	<bean id="p3"  class="com.ts.test1.vo.PersonVo">
+	     <constructor-arg ref="nameBean"/>
+	     <constructor-arg ref="ageBean"/>
+	     <constructor-arg ref="addrBean"/>    
+	</bean>	
+	
+	<!-- Setter Injection -->
+	<bean id="p4" class="com.ts.test1.vo.PersonVo">
+		<property name="name" ref="nameBean"/>
+		<property name="age"  ref="ageBean"/>
+		<property name="addr" ref="addrBean"/>
+	</bean>
+		
+		
+</beans>
+
+
+
+
+
+

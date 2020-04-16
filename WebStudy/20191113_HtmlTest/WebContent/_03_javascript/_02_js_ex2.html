@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!--
+  자바스크립트 자료형
+  1.문자형 : string
+  2.숫자형 : Number
+  3.날짜형 : Date
+  -->
+<script type="text/javascript">
+  /* 변수선언 
+     var 변수명;
+     cf)변수선언시 type을 사용하지 않는다(var사용)
+  */
+  var name = "홍길동";
+  var globar_c = 30;
+  
+  var a = '문자열';// 문자열표현: "" or ''
+  
+  document.write("오늘 '정말' 춥죠?<br>");
+  document.write('내일은 "더" 춥다네요<br>');
+  //     ' or " 를 문자로 인식시키려면 앞에 \ 붙여줘라
+  document.write('모래는 \'더더\' 춥다네요<br>');
+  
+  a = 10; // Number
+  
+  a = new Date(); //Date
+  
+  
+  function test(){
+	  /* 함수내에서 var 붙이지 않으면 전역변수 */
+	  var local_a =10;//지역변수
+	      global_b=20;//전역변수
+	  document.write('지역변수:'+ local_a +'<br>');    
+  }   
+  
+  test();
+  
+  //body내에 작성
+  
+  document.write('전역변수:'+ global_b +'<br>');
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

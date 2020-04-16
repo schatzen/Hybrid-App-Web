@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+*{
+	margin:  0;
+	padding: 0;
+}
+
+div#main_box{
+	width : 800px;
+	height: 600px;
+	background-color: #cccccc;
+	/* 
+	   margin: auto;
+	   margin-left margien-right 
+	   동일크기로 설정  
+	   결과적으로 화면 중앙에 배치   
+	*/
+	margin: auto; 	
+} 
+
+div#header{
+	/* block요소는 부모 
+	   폭크기를 그대로 사용한다  */
+	width: 100%;
+	height: 100px;
+	background-color: #ffcccc;
+}
+
+div#aside{
+	width: 30%;
+	height: 400px;
+	background-color: #ffffcc;
+	/* 부유(띄우기)속성  */
+	float: left;
+}
+
+div#content{
+	width: 70%;
+	height: 400px;
+	background-color: #ccffcc;
+	float: left;
+}
+
+div#footer{
+	height: 100px;
+	background-color: #ccccff; 
+	
+	/* float속성해제
+	   clear:left;
+	   clear:right
+	   모두해제:both 
+	 */
+	clear:both;
+}
+
+
+
+

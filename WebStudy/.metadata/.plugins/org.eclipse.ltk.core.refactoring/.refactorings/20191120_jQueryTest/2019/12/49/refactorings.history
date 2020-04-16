@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;book1.jpg&apos; to &apos;upload&apos;&#x0D;&#x0A;- Original project: &apos;20191120_jQueryTest&apos;&#x0D;&#x0A;- Destination element: &apos;upload&apos;&#x0D;&#x0A;- Original element: &apos;book1.jpg&apos;" description="Copy file" element1="WebContent/jQueryExam/images/book1.jpg" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1575601587216" target="/20191206_PhotoGallery/WebContent/upload" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  #disp{
+     width: 100px;
+     height: 100px;
+     background: black;
+      
+  }
+  
+  input[type='button']{
+     width: 100px;
+  } 
+  
+</style>
+<script type="text/javascript">
+
+	var disp;
+	var marginTop = 0,marginLeft=0;
+	/* 초기화 이벤트 */
+	window.onload =function(){
+	   
+	    //document.title='모든 객체가 생성/배치완료되면 호출';
+	    disp = document.getElementById("disp");
+	   
+	};
+	
+	function show(){
+		
+		var w = document.getElementById("w").value;
+		var h = document.getElementById("h").value;
+		var c = document.getElementById("c").value;
+		
+		disp.style.width  = w + "px";
+		disp.style.height = h + "px";
+		disp.style.background = c;
+		
+	}
+
+	
+	function move_left(){
+		marginLeft -=10;
+		if(marginLeft<0)
+			marginLeft=0;
+		disp.style.marginLeft = marginLeft +"px";
+	}
+	
+	function move_right(){
+		marginLeft +=10;
+		if(marginLeft>300)
+			marginLeft=300;
+		disp.style.marginLeft = marginLeft +"px";
+	}
+	
+	function move_up(){
+		marginTop -= 10;
+		if(marginTop<0)
+			marginTop = 0;
+		disp.style.marginTop = marginTop + "px";
+	}
+	
+	function move_down(){
+		marginTop += 10;
+		if(marginTop>300)
+			marginTop = 300;
+		disp.style.marginTop = marginTop + "px";
+	}
+	
+	function move_init_location(){
+		marginTop = marginLeft = 0;
+		disp.style.margin = '0';
+	}
+
+</script>
+
+
+</head>
+<body>
+
+폭:  <input id="w" value="100"> 
+높이:<input id="h" value="100"> 
+색상:<input id="c" value="black">
+     <input type="button"  value="보여줘" onclick="show();"> 
+<hr>
+<input type="button" value="좌로이동"     onclick="move_left();">
+<input type="button" value="우로이동"     onclick="move_right();">
+<input type="button" value="위로이동"     onclick="move_up();">
+<input type="button" value="아래로이동"   onclick="move_down();">
+<input type="button" value="원래위치이동" onclick="move_init_location();">
+     
+<hr>
+<div id="disp"></div>
+</body>
+</html>

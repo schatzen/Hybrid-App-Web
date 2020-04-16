@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="sendMulticast"/>
+			<item value="subject"/>
+			<item value=".."/>
+			<item value="calendarSchduleAdd"/>
+			<item value="product_in"/>
+			<item value="p_price"/>
+			<item value="p_num"/>
+			<item value="?"/>
+			<item value="max_pay"/>
+			<item value="min_pay"/>
+			<item value="p_subject"/>
+			<item value="id"/>
+			<item value="pwd"/>
+			<item value="name"/>
+			<item value="eng"/>
+		</list>
+		<list key="replacehistory">
+			<item value="content"/>
+			<item value="${ pageContext.request.contextPath  }/resources"/>
+			<item value="product_remain"/>
+			<item value="product_out"/>
+			<item value="p_saleprice"/>
+			<item value="p_content"/>
+			<item value="p_company"/>
+			<item value="p_name"/>
+			<item value="#{ }"/>
+			<item value="#{}"/>
+			<item value="end"/>
+			<item value="start"/>
+			<item value="pwd"/>
+			<item value="addr"/>
+			<item value="mat"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="870"/>
+		<item key="DIALOG_Y_ORIGIN" value="82"/>
+		<item key="DIALOG_WIDTH" value="393"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

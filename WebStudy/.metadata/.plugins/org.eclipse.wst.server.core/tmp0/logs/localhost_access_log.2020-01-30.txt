@@ -1,0 +1,5 @@
+127.0.0.1 - - [30/Jan/2020:09:58:51 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [30/Jan/2020:09:58:52 +0900] "GET /20191211_NaverOpenAPI_Local/daum_local_list.jsp HTTP/1.1" 200 1305
+0:0:0:0:0:0:0:1 - - [30/Jan/2020:09:58:52 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+0:0:0:0:0:0:0:1 - - [30/Jan/2020:09:58:59 +0900] "GET /20191211_NaverOpenAPI_Local/daum_search.do?search=%EC%95%BD%EA%B5%AD&latitude=37.5558057&longitude=126.93911259999997 HTTP/1.1" 200 4820
+0:0:0:0:0:0:0:1 - - [30/Jan/2020:09:59:09 +0900] "GET /20191211_NaverOpenAPI_Local/daum_search.do?search=%ED%8E%B8%EC%9D%98%EC%A0%90&latitude=37.5558057&longitude=126.93911259999997 HTTP/1.1" 200 4880

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+  /* input인데 type='button'
+     <input type='button'>  
+     input[attribute=value]
+   */
+  input[type='button']{
+  	 width: 40px;
+  }
+ 
+</style>
+
+<!-- 외부라이브러리 연결 -->
+<script type="text/javascript" src="../js/my_regular.js"></script>
+
+
+<script type="text/javascript">
+
+	//자바스크립트 정규식(Regular Expression)활용
+	// ^		 : 시작문자
+	// $		 : 끝문자
+	//[]		 : 범위설정
+	//{시작,끝}  : 자릿수지정(시작~끝)
+	//{시작,  }  : 자릿수지정(시작~  )
+	//var regular_number = /^[0-9]{1,4}$/;
+	//var regular_pwd = /^[A-Z]{1}[a-zA-Z0-9]{5,7}$/;
+
+
+	function add() {
+		
+		var su1_ctrl = document.getElementById("su1");//컨트롤
+		var su1 = su1_ctrl.value.trim();//값읽어오기
+		//su1_ctrl.style.display='none';//hide
+		
+		//입력값을 얻어오기->공백제거
+		var su2 = document.getElementById("su2").value.trim();
+		
+		
+		//입력값 체크
+	    //정규식의 패턴에 맞는지 체크
+	    if(regular_number.test(su1)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su1").value='';
+	    	//입력포커스
+	    	document.getElementById("su1").focus();
+	    	return;
+	    }
+	    
+	    if(regular_number.test(su2)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su2").value='';
+	    	//입력포커스
+	    	document.getElementById("su2").focus();
+	    	return;
+	    }
+		
+		//계산       '1' + '2'  =>'12'
+		//               문자열->정수로
+		// java       =>  Integer.parseInt("1")
+		// javascript =>  parseInt("1") 또는 
+		//                Number("1")
+		//var result = parseInt(su1) + parseInt(su2);
+		var result = Number(su1) + Number(su2);
+		
+		//계산결과 결과입력창에 넣기
+		document.getElementById("result").value = result;
+	}
+	
+	function minus() {
+		
+		var su1 = document.getElementById("su1").value.trim();
+		//입력값을 얻어오기->공백제거
+		var su2 = document.getElementById("su2").value.trim();
+		
+		
+		//입력값 체크
+	    //정규식의 패턴에 맞는지 체크
+	    if(regular_number.test(su1)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su1").value='';
+	    	//입력포커스
+	    	document.getElementById("su1").focus();
+	    	return;
+	    }
+	    
+	    if(regular_number.test(su2)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su2").value='';
+	    	//입력포커스
+	    	document.getElementById("su2").focus();
+	    	return;
+	    }
+		
+		//계산       '1' + '2'  =>'12'
+		//               문자열->정수로
+		// java       =>  Integer.parseInt("1")
+		// javascript =>  parseInt("1") 또는 
+		//                Number("1")
+		//var result = parseInt(su1) + parseInt(su2);
+		var result = Number(su1) - Number(su2);
+		
+		//계산결과 결과입력창에 넣기
+		document.getElementById("result").value = result;
+	}
+	
+	function multiply() {
+		
+		var su1 = document.getElementById("su1").value.trim();
+		//입력값을 얻어오기->공백제거
+		var su2 = document.getElementById("su2").value.trim();
+		
+		
+		//입력값 체크
+	    //정규식의 패턴에 맞는지 체크
+	    if(regular_number.test(su1)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su1").value='';
+	    	//입력포커스
+	    	document.getElementById("su1").focus();
+	    	return;
+	    }
+	    
+	    if(regular_number.test(su2)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su2").value='';
+	    	//입력포커스
+	    	document.getElementById("su2").focus();
+	    	return;
+	    }
+		//var result = parseInt(su1) + parseInt(su2);
+		var result = Number(su1) * Number(su2);
+		
+		//계산결과 결과입력창에 넣기
+		document.getElementById("result").value = result;
+	}
+	
+	function divide() {
+		
+		var su1 = document.getElementById("su1").value.trim();
+		//입력값을 얻어오기->공백제거
+		var su2 = document.getElementById("su2").value.trim();
+		
+		
+		//입력값 체크
+	    //정규식의 패턴에 맞는지 체크
+	    if(regular_number.test(su1)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su1").value='';
+	    	//입력포커스
+	    	document.getElementById("su1").focus();
+	    	return;
+	    }
+	    
+	    if(regular_number.test(su2)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su2").value='';
+	    	//입력포커스
+	    	document.getElementById("su2").focus();
+	    	return;
+	    }
+		//var result = parseInt(su1) + parseInt(su2);
+		var result =  (su2==0) ? 0 : (Number(su1) / Number(su2));
+		
+		//계산결과 결과입력창에 넣기
+		document.getElementById("result").value = result;
+	}
+	
+	function remain() {
+		
+		var su1 = document.getElementById("su1").value.trim();
+		//입력값을 얻어오기->공백제거
+		var su2 = document.getElementById("su2").value.trim();
+		
+		
+		//입력값 체크
+	    //정규식의 패턴에 맞는지 체크
+	    if(regular_number.test(su1)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su1").value='';
+	    	//입력포커스
+	    	document.getElementById("su1").focus();
+	    	return;
+	    }
+	    
+	    if(regular_number.test(su2)==false){
+	    	alert('1~4자리의 숫자만 입력하세요');
+	    	//값비우기
+	    	document.getElementById("su2").value='';
+	    	//입력포커스
+	    	document.getElementById("su2").focus();
+	    	return;
+	    }
+		//var result = parseInt(su1) + parseInt(su2);
+		var result =  (su2==0) ? 0 : (Number(su1) % Number(su2));
+		
+		//계산결과 결과입력창에 넣기
+		document.getElementById("result").value = result;
+	}
+</script>
+
+</head>
+<body>
+
+<!-- <input>
+     id  : client측에서만 활용할 목적
+     name: server에 데이터를 전송할 목적
+ -->
+
+수1:<input id="su1"  value="" name="su1"><br>
+수2:<input id="su2"  value=""><br>
+
+<input type="button" value="+"  onclick="add();">
+<input type="button" value="-"  onclick="minus();">
+<input type="button" value="*"  onclick="multiply();">
+<input type="button" value="/"  onclick="divide();">
+<input type="button" value="%"  onclick="remain();">
+
+<br>
+
+결과:<input id="result" value="">
+
+</body>
+</html>

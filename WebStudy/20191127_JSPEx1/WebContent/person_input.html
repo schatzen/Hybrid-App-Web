@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send(f){
+		
+		var regular_number = /^[0-9]+$/;
+		
+		var name = f.name.value.trim();
+		var age  = f.age.value.trim();
+		var addr = f.addr.value.trim();
+		
+		if(name==''){
+			alert('이름을 입력하세요');
+			f.name.value='';
+			f.name.focus();
+			return;
+		}
+		
+		if(regular_number.test(age)==false){
+			alert('나이는 숫자로 입력하세요');
+			f.age.value='';
+			f.age.focus();
+			return;
+		}
+		
+		if(addr==''){
+			alert('주소를 입력하세요');
+			f.addr.value='';
+			f.addr.focus();
+			return;
+		}
+		
+		//전송
+		f.action = "person_result.jsp";//전송할객체
+		f.submit();//전송
+	}
+	
+	
+	function send2(f){
+		
+		var regular_number = /^[0-9]+$/;
+		
+		var name = f.name.value.trim();
+		var age  = f.age.value.trim();
+		var addr = f.addr.value.trim();
+		
+		if(name==''){
+			alert('이름을 입력하세요');
+			f.name.value='';
+			f.name.focus();
+			return;
+		}
+		
+		if(regular_number.test(age)==false){
+			alert('나이는 숫자로 입력하세요');
+			f.age.value='';
+			f.age.focus();
+			return;
+		}
+		
+		if(addr==''){
+			alert('주소를 입력하세요');
+			f.addr.value='';
+			f.addr.focus();
+			return;
+		}
+		
+		//전송
+		f.action = "person_result2.jsp";//전송할객체
+		f.submit();//전송
+	}
+	
+</script>
+</head>
+<body>
+
+	<form>
+	   이름:<input name="name"  value="홍길동"><br>
+	   나이:<input name="age"   value="20"><br>
+	   주소:<input name="addr"  value="서울 마포 노고산동"><br>
+	   <input type="button"	 value="전송1" 
+	          onclick="send(this.form);">
+	   <input type="button"	 value="전송2" 
+	          onclick="send2(this.form);">
+	</form>
+</body>
+</html>

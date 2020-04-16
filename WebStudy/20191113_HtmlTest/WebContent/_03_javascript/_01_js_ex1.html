@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+   Javascript:브라우져 제어용 언어
+   1.inline 방식:html 내에서 처리
+   2.선언적 방식:head사이에 선언
+   3.외부라이브러리 연결방식
+  -->
+  
+<!-- 외부라이브러리 연결-->
+<script type="text/javascript" src="../js/my_js.js"></script>  
+
+  
+<!-- 선언적방식 -->  
+<script type="text/javascript">
+	/* 자바스크립트 문법  */
+	
+	/* 함수선언 */
+	function greet_china(){
+		window.alert('니하오~~');
+	}
+	
+	function greet_german() {
+		alert('할로');
+	}
+	
+	
+</script>
+  
+</head>
+<body>
+<hr>
+inline방식
+<hr>
+<!-- inline방식 -->
+<input type="button" value="한국어 인사말" 
+       onclick="javascript:window.alert('안녕하세요');"><br>
+<input type="button" value="영어 인사말" 
+       onclick="window.alert('Hi~ Everyone!!');"><br>
+<input type="button" value="일본어 인사말" 
+       onclick="alert('오겡끼데스까');"><br>
+<hr>
+선언적방식
+<hr>
+<!--  -->       
+<input type="button" value="중국어 인사말" 
+       onclick="javascript:greet_china();"><br>
+<input type="button" value="독일어 인사말" 
+       onclick="greet_german();"><br>
+ 
+<hr>
+외부라이브러리 이용방식  
+<hr>
+<input type="button" value="불어 인사말" 
+       onclick="greet_france();"><br>
+       
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+ 
+   var regular_number = /^[0-9]+$/;
+
+   function find(){
+	   var min_pay = $("#min_pay").val().trim();
+	   var max_pay = $("#max_pay").val().trim();
+	   
+	   if(regular_number.test(min_pay)==false){
+		   alert('숫자만 입력하세요');
+		   $("#min_pay").val("");
+		   $("#min_pay").focus();
+		   return;
+	   }
+	   
+	   if(regular_number.test(max_pay)==false){
+		   alert('숫자만 입력하세요');
+		   $("#max_pay").val("");
+		   $("#max_pay").focus();
+		   return;
+	   }
+	   
+	   //Ajax요청
+	   $.ajax({
+		   url:"sawon/sapay_list.do",//SawonSapayListAction
+		   data:{"min_pay":min_pay,"max_pay":max_pay},
+		   success:function(res_data){
+			   $("#disp").html(res_data);
+		   }
+	   });
+	   
+   }
+
+   //jQuery초기화 : $(document).ready(function(){}); 동일함
+   $(function(){
+	   
+	   $("#btn_find").click(find);
+	   
+   });
+
+
+</script>
+
+</head>
+<body>
+급여:<input id="min_pay" size=5>-<input id="max_pay" size=5>
+     <input type="button"  value="조회" id="btn_find">
+<hr>
+<div id="disp"></div>
+      
+</body>
+</html>

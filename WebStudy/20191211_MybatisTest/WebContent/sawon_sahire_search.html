@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+ 
+   var regular_number = /^[0-9]{4}$/;
+
+   function find(){
+	   var start = $("#start").val().trim();
+	   var end = $("#end").val().trim();
+	   
+	   if(regular_number.test(start)==false){
+		   alert('숫자만 입력하세요');
+		   $("#start").val("");
+		   $("#start").focus();
+		   return;
+	   }
+	   
+	   if(regular_number.test(end)==false){
+		   alert('숫자만 입력하세요');
+		   $("#end").val("");
+		   $("#end").focus();
+		   return;
+	   }
+	   
+	   //Ajax요청
+	   $.ajax({
+		   url:"sawon/sahire_list.do",//SawonSahireListAction
+		   data:{"start":start,"end":end},
+		   success:function(res_data){
+			   $("#disp").html(res_data);
+		   }
+	   });
+	   
+   }
+
+   //jQuery초기화 : $(document).ready(function(){}); 동일함
+   $(function(){
+	   
+	   $("#btn_find").click(find);
+	   
+   });
+
+
+</script>
+</head>
+<body>
+입사년도:<input id="start" size=5 value="1990">
+         -
+         <input id="end" size=5 value="2000">
+         <input type="button" value="검색" id="btn_find">
+<hr>
+<div id="disp"></div>
+
+<!--
+   ## 검색 SQL문 ##
+   select * from sawon
+   where to_number(to_char(sahire,'YYYY')) between 1990 and 2000
+-->            
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CKEditorImageUploadAction.java&apos; to &apos;20191230_SpringPhotoGallery/src/main/java/util&apos;&#x0D;&#x0A;- Original project: &apos;20191218_CKEditor4_Test&apos;&#x0D;&#x0A;- Destination element: &apos;20191230_SpringPhotoGallery/src/main/java/util&apos;&#x0D;&#x0A;- Original element: &apos;action.CKEditorImageUploadAction.java&apos;" description="Copy compilation unit" destination="=20191230_SpringPhotoGallery/src\/main\/java&lt;util" element1="/src&lt;action{CKEditorImageUploadAction.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1577926749967" units="1" version="1.0"/>
+</session>

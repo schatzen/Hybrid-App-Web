@@ -1,0 +1,77 @@
+package com.tj.fcmtest;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import dao.MobileMemberDao;
+import vo.MobileMemberVo;
+
+@Controller
+public class FCMRestfulController {
+
+	MobileMemberDao  mobile_member_dao;
+
+	public void setMobile_member_dao(MobileMemberDao mobile_member_dao) {
+		this.mobile_member_dao = mobile_member_dao;
+	}
+	
+	//전체조회(서버용)
+	@RequestMapping(value="/mobile_member/list.do",method=RequestMethod.GET)
+	public String selectList(Model model) {
+		
+		List<MobileMemberVo> list = mobile_member_dao.selectList();
+		
+		//request binding
+		model.addAttribute("list", list);
+		
+		
+		return "mobile_member_list";
+	}
+	
+	//전체조회(Mobile용)
+	//  url = http://localhost:9090/fcmtest/mobile_members
+	//  uri =                      /fcmtest/mobile_members
+	@RequestMapping(value="/mobile_members",method=RequestMethod.GET)
+	@ResponseBody
+	public Map selectList(){
+		
+		List<MobileMemberVo> list = mobile_member_dao.selectList();
+		Map map = new HashMap();
+		map.put("list", list);
+		
+		return map;
+	}
+	
+	// 요청URI :  /fcmtest/mobile_member/id/one
+	@RequestMapping(value="/mobile_member/id/{id}",method=RequestMethod.GET)
+	@ResponseBody
+	public MobileMemberVo selectOne(@PathVariable("id") String id){
+		
+		MobileMemberVo vo = mobile_member_dao.selectOne(id);
+		
+		return vo;
+	}
+	
+	// 요청URI :  /fcmtest/mobile_member/idx/1
+	@RequestMapping(value="/mobile_member/idx/{idx}",method=RequestMethod.GET)
+	@ResponseBody
+	public MobileMemberVo selectOne(@PathVariable("idx") int idx){
+		
+		MobileMemberVo vo = mobile_member_dao.selectOne(idx);
+		
+		return vo;
+	}
+	
+	
+	
+	
+	
+}

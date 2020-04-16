@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<action name="/test/list"   		class="action.ListAction"/>
+	<action name="/test/view"   		class="action.ViewAction"/>
+	<action name="/test/delete" 		class="action.DeleteAction"/>
+	<action name="/test/insert_form" 	class="action.InsertFormAction"/>
+</root>

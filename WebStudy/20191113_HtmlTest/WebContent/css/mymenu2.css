@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* class selector */
+.submenu_style{
+	list-style: none;
+}
+
+.submenu_style > li{
+	margin-top: 50px; 
+}
+
+/* a(inline->block변경) */
+.submenu_style > li > a {
+	display: block;
+	border: 1px solid #ffffc6; 
+	width: 120px;
+	text-align: center;
+	text-decoration: none;
+	color: #d0ffd0;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px black;
+	/* box-shadow:  1px 1px 1px black; */
+}
+
+.submenu_style > li > a:hover{
+	color: blue;
+	border: 1px solid blue; 
+} 
+
+
+
+
+
+

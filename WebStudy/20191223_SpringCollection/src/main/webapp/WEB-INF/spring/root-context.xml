@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- Constructor Injection -->
+	<bean id="mySetBean"  class="util_test.MySet">
+	    <!--                            ② 
+	       MySet mySetBean = new MySet(set); -->
+		<constructor-arg name="set">
+			<!-- ①
+			     Set set =  new HashSet();
+			     set.add("사과");
+			     set.add("배");
+			 -->
+			<set>
+			    <value>사과</value>
+			    <value>배</value>
+			    <value>참외</value>
+			    <value>포도</value>
+			    <value>수박</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Setter Injection -->
+	
+	<!-- MyList myListBean = new MyList(); -->
+	<bean id = "myListBean"  class="util_test.MyList">
+	    <!--  
+	         ②  
+	         myListBean.setList(list); --> 
+		<property name="list">
+			<!-- ①
+			     List list = new ArrayList();
+			     list.add("서울");
+			     list.add("인천");
+			 -->
+			<list>
+				<value>서울</value>
+				<value>인천</value>
+				<value>대전</value>
+				<value>광주</value>
+				<value>부산</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Setter Injection -->
+	<!-- MyMap myMapBean = new MyMap(); -->
+	<bean id="myMapBean"  class="util_test.MyMap">
+	    <!--  ②
+	           myMapBean.setMap(map); -->
+	    <property name="map">
+	        <!-- 
+	              ①
+	              Map map = new HashMap();
+	              map.put("driver","oracle.jdbc.driver.OracleDriver");
+	              ...      
+	        -->
+	     	<map>
+				<entry key="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<entry key="url"    value="jdbc:oracle:thin:@localhost:1521:xe"/>
+				<entry key="user"   value="test"/>
+				<entry key="pwd"    value="1234"/>	     	
+	     	</map>
+	    </property>
+	</bean>
+	
+	<!-- MyProp등록  -->
+	<bean id="myPropBean"  class="util_test.MyProp">
+	    <!-- ②
+	         myPropBean.setProp(prop); -->
+		<property name="prop">
+		    <!-- ①
+		         Properties prop = new Proproperties();
+		         prop.setProperty("kr","한국");
+		         prop.setProperty("jp","일본");
+		     -->
+			<props>
+               <prop key="kr">한국</prop>
+               <prop key="jp">일본</prop>
+               <prop key="ch">중국</prop>
+               <prop key="us">미국</prop>
+               <prop key="fr">프랑스</prop> 			
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+		
+</beans>

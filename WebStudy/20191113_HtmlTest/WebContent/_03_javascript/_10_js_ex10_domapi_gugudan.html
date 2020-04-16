@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#disp{
+		width: 150px;
+		height: 320px;
+		padding: 30px;
+		background-color: #eeeeee;
+		color: yellow;
+		font-size: 20pt;
+		
+	}
+</style>
+<script type="text/javascript">
+	function show(){
+		
+		//입력된값 읽어오기
+		var dan = document.getElementById("dan").value;
+		
+		//값체크: 2~9사이의 정수만 입력되도록 <= 정규식
+		var regular_gugudan = /^[2-9]{1}$/;
+		
+		if(regular_gugudan.test(dan)==false){
+			alert('2~9사이의 정수를 입력하세요');
+			document.getElementById("dan").value='';
+			document.getElementById("dan").focus();
+			return;
+		}
+		
+		
+		//구구단 생성
+		var str="";
+		for(var i=1;i<=9;i++){
+			str += (dan + "x" + i + "=" + dan*i + "<br>" ); 
+		}
+		
+		
+		var disp = document.getElementById("disp");
+		if(dan==2){
+		   disp.style.color="white";
+		   disp.style.background="black";
+		   disp.style.width="200px";
+		   disp.style.marginLeft="50px";
+		}
+		else if(dan==3){
+		   disp.style.color="#ff0000";
+		   disp.style.background="#eeffff";
+		   disp.style.width="150px";
+		}
+		else if(dan==4){
+		   disp.style.color=     "#00ff00";
+		   disp.style.background="#ffeeff";
+		}
+		
+		
+		//생성된 결과를 출력
+		document.getElementById("disp").innerHTML = str;
+		
+	}
+
+</script>
+
+</head>
+<body>
+단:<input id="dan">
+   <input type="button"  value="보여줘" onclick="show();">
+<hr>
+<div id="disp"></div>   
+
+
+</body>
+</html>

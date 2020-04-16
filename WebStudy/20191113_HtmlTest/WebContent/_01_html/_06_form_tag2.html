@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- form tag는 서버로 데이터를 전송시 사용
+	     <form> 속성
+	     action="" : 전송할 객체 (생략되면 자신에게 전송) 
+	     method="" : 전송방식(GET or POST)
+	     
+	     submit(전송시)
+	     => _06_form_tag.html?name=홍길동&id=hong
+	                         ?변수명=값&변수명=값  <=Query
+	     ##form 요소(Element)
+	     <input type="">
+	        type="text"
+	        type="password"
+	        type="checkbox"
+	        type="radio"
+	        type="file"
+	        type="button"
+	        type="submit"
+	        type="reset"
+	     <select>
+	     <textarea>
+	       
+	 -->
+	<form action="">
+	  <table border ="1" width=500 align="center">
+	  	<caption>::::회원가입::::</caption>
+	   <tr>
+	    	<th>이름:  </th>
+	    	<td><input type="text" name="name"></td>
+	   </tr>
+	  
+
+	   <tr>
+	    	<th>아이디:</th>
+	    	<td><input name="id"></td>
+	   </tr>
+	   
+	   <tr>
+	    	<th>비밀번호:</th>
+	    	<td><input type="password" name="pwd" 
+	                   placeholder="6~8자리 영숫자 조합"></td>
+	   </tr> 
+
+	   <tr>
+	    	<th>성별:</th>
+	    	<td>
+		    	 <input type="radio" name="gender" value="남자" checked="checked">남자
+		         <input type="radio" name="gender" value="여자">여자
+		    </td>
+	   </tr>
+	   
+	   <tr>
+	    	<th>취미:</th>
+	    	<td>
+	    		<input type="checkbox" name="hobby" value="독서">독서
+		        <input type="checkbox" name="hobby" value="낚시">낚시
+		        <input type="checkbox" name="hobby" value="운동">운동
+		        <input type="checkbox" name="hobby" value="영화">영화
+	    	</td>
+	   </tr>
+	   
+	   
+	   <tr>
+	    	<th>친구1:</th>
+	    	<td><input type="text" name="friend"></td>
+	   </tr>
+	   
+	   <tr>
+	    	<th>친구2:</th>
+	    	<td><input type="text" name="friend"></td>
+	   </tr>
+	   
+	   <tr>
+	    	<th>친구3:</th>
+	    	<td><input type="text" name="friend"></td>
+	   </tr>
+       
+       <tr>
+	    	<th>혈액형:</th>
+	    	<td>
+	    		<select name="blood">
+	                 <option value="A">A형</option>
+	                 <option value="B">B형</option>
+	                 <option value="O">O형</option>
+	                 <option value="AB">AB형</option>  
+	            </select>
+	    	
+	    	</td>
+	   </tr>
+	   
+	   <tr>
+	   		<td colspan="2">자기소개</td>
+	   </tr>
+       
+       <tr>
+	   		<td colspan="2">
+	   			<textarea name="profile" rows="5" cols="50"></textarea>
+	   		</td>
+	   </tr>
+	   
+	   <tr>
+	   		<th>사진(첨부):</th>
+	   		<td><input type="file" name="photo"></td>
+	   </tr>
+       
+       <tr>
+       		<td colspan="2" align="center">
+       		   <!-- this.form=>this를 포함(소유)한 폼 -->
+			   <input type="button" value="전송" 
+			          onclick=" this.form.submit(); ">
+			   <input type="button" value="취소" 
+			          onclick=" this.form.reset(); ">
+       		</td>
+       </tr>
+       <!-- 
+	   <input type="submit" value="전송">
+	   <input type="reset"  value="입력취소"> -->
+	  </table> 
+	</form>
+</body>
+</html>

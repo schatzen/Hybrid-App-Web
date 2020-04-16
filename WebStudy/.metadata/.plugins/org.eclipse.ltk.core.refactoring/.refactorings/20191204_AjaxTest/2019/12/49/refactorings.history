@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hello_ajax.jsp&apos; to &apos;hello_ajax.jsp&apos;&#x0D;&#x0A;- Original project: &apos;20191204_AjaxTest&apos;&#x0D;&#x0A;- Destination element: &apos;hello_ajax.jsp&apos;&#x0D;&#x0A;- Original element: &apos;hello_ajax.jsp&apos;" description="Copy file" element1="WebContent/hello_ajax.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1575431598286" target="/20191204_AjaxTest/WebContent/hello_ajax.jsp" units="0" version="1.0"/>
+</session>

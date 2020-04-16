@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- on-line참조 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+    function find_book(){
+    	
+    	var book_name = $("#book_name").val().trim();
+		if(book_name==''){
+			alert("검색할 도서명을 입력하세요");
+			$("#book_name").val("");
+			$("#book_name").focus();
+			return;
+		}
+		
+		var page    = $("#page").val();   // 2
+		var display = $("#display").val();//10
+		var start   = (page-1)*display + 1;
+		
+		//Ajax 요청
+		$.ajax({
+			url:"book_search.do",
+			data:{"book_name": book_name,"start":start,"display":display},
+			dataType:'html',
+			success:function(res_data){
+				
+				$("#disp").html(res_data);
+				
+			},
+			error:function(request,status,error){
+				alert(error);
+			}
+		});
+		
+    }
+
+
+	$(document).ready(function(){
+		
+		$("#page").change(function(){
+			
+			find_book();
+		});
+		
+		$("#display").change(function(){
+			find_book();
+		});
+		
+		$("#btn_find").click(function(){
+			find_book();
+		});
+		
+	});
+
+
+</script>
+
+</head>
+<body>
+
+도서명:<input id="book_name">
+       <input id="btn_find" type="button" value="검색">
+       
+       페이지:<select id="page">
+		          <option value="1">1</option>
+		          <option value="2">2</option>
+		          <option value="3">3</option>
+		          <option value="4">4</option>
+		          <option value="5">5</option>
+		          <option value="6">6</option>
+		          <option value="7">7</option>
+		          <option value="8">8</option>
+		          <option value="9">9</option>
+		          <option value="10">10</option>
+		       </select>
+		       
+	    화면당출력갯수:	       
+               <select id="display">
+                   <option value="10">10</option>
+                   <option value="20">20</option>
+                   <option value="30">30</option>
+                   <option value="40">40</option>
+                   <option value="50">50</option>
+               </select> 
+       
+<hr>
+<div id="disp"></div>        
+
+</body>
+</html>

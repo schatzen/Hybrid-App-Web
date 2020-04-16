@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;20191113_HtmlTest&apos;&#x0D;&#x0A;- Original project: &apos;20191113_HtmlTest&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     idle_lion.mp4&#x0D;&#x0A;     mamamoo_hip.mp4&#x0D;&#x0A;     Noel_Late_Night.mp4" description="Delete elements" element1="WebContent/mp4/idle_lion.mp4" element2="WebContent/mp4/mamamoo_hip.mp4" element3="WebContent/mp4/Noel_Late_Night.mp4" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1574136115909" subPackages="false" version="1.0"/>
+</session>

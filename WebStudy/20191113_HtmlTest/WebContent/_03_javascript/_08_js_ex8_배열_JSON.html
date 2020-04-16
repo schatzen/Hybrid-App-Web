@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+/*  배열 선언  */
+
+//방법1) 보편적 방법
+//                  0      1      2      3  <=index
+var sido_array = ['서울','경기','인천','대전'];
+
+sido_array[5]='제주';
+
+document.write("sido_array's length=" + sido_array.length + "<br>");
+
+for(var i=0;i<sido_array.length;i++){// i =  0 1 2 3
+	document.write("sido_array[" + i + "]=" + sido_array[i] + "<br>");
+}
+
+//방법2)
+var fruit_array = new Array();
+fruit_array[0] = '사과';
+fruit_array[1] = '배';
+fruit_array[2] = '참외';
+fruit_array[3] = '포도';
+fruit_array[4] = '수박';
+fruit_array[5] = '복숭아';
+
+document.write("------------------------<br>");
+for(var i=0;i<fruit_array.length;i++){// 
+	document.write("fruit_array[" + i + "]=" + fruit_array[i] + "<br>");
+}
+
+/*  
+  JSON(JavaScript Object Notation) 
+  : 자바스크립트 객체 표현방법
+    표현방식)
+      {  key    : value }
+      {'속성명':'값','속성명':'값'} <= JSON
+  
+  cf)
+     class Person{
+    	 public String name;
+    	 public int age;
+     }
+     Person p = new Person();//객체
+     p.name = "홍길동";
+     p.age   = 20;
+*/
+
+// JSONObject
+var p = { "name":"홍길동" , "age":"20" }; 
+
+document.write("------------------------<br>");
+document.write("p.name=" + p.name + "<br>");
+document.write("p.age =" + p.age + "<br>");
+
+
+// JSONArray
+var p_array = [
+	             { "name":"일길동" , "age":"21" },//0
+	             { "name":"이길동" , "age":"22" },//1
+	             { "name":"삼길동" , "age":"23" } //2
+              ];
+//2번째 데이터의 이름을 얻어오기
+var name = p_array[1].name;
+
+//전체데이터 출력
+document.write("------------------------<br>");
+for(var i=0;i<p_array.length;i++){// i = 0 1 2
+	// 일길동-21
+	var pp = p_array[i];
+	
+	document.write(pp.name + '-' + pp.age + '<br>');
+	
+	
+}
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

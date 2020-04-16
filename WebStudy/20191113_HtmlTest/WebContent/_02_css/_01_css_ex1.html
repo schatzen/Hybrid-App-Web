@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- CSS(Cascading Style Sheet)  
+     1.inline 방식 :<p style="속성:값; 속성:값;">
+     2.선언적 방식 : html head tag 사이에 선언
+                     <style> CSS정의  </style>
+     3.외부화일 link방식
+-->
+
+<!-- CSS 외부화일 link -->
+<!--  rel : 릴레이션 -->
+<link rel="stylesheet" href="../css/mystyle.css">
+
+<!-- bootstrap css -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<style type="text/css">
+   p{ border: 1px solid blue;  }
+   
+   /* id selector */
+   p#p1 { 
+            color:blue; 
+            font-family: 휴먼옛체,궁서체,굴림체;  
+        }
+        
+   div#p1 {
+            color:green;
+            font-size: 20pt;
+            font-weight: bold;   
+   }  
+   
+   /* class selector: 공통속성을 지정 사용 */
+   .box_style{
+        width : 200px;
+        height: 50px;
+        border: 1px solid blue;
+        /*            x  y  blur color */
+        box-shadow: -2px -2px 2px black;
+   }      
+   
+</style>
+</head>
+<body>
+<!-- inline 방식 -->
+<p style="color:red; font-size: 12pt; border: none;">inline방식의 CSS</p>
+
+<!-- 선언적 방식 -->
+<!-- css : id selector -->
+<p   id="p1">id=p1인 p tag속성</p>
+<div id="p1">id=p1인 div tag속성</div>
+
+<!-- css : class selector -->
+<p   class="box_style">p box</p>
+<div class="box_style">div box</div>
+
+<!-- 외부화일 link 방식 -->
+<div id="disp"></div>
+
+<br><br><br><br>
+
+<table class="table table-striped table-bordered table-hover">
+  <tr class="success">
+     <th>이름</th>
+     <th>주소</th>
+     <th>전화</th>
+  </tr>
+  
+  <tr>
+     <td>일길동</td>
+     <td>서울 마포 노고산동</td>
+     <td>010-111-1111</td>
+  </tr>
+  
+  <tr>
+     <td>이길동</td>
+     <td>서울 마포 노고산동</td>
+     <td>010-111-1111</td>
+  </tr>
+  
+  <tr>
+     <td>삼길동</td>
+     <td>서울 마포 노고산동</td>
+     <td>010-111-1111</td>
+  </tr>
+</table>
+
+<hr>
+<button type="button" class="btn">Basic</button>
+<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>
+
+<hr>
+<input type="button"  value="그냥버튼"    class="btn btn-default">
+<input type="button"  value="btn-primary" class="btn btn-primary">
+
+</body>
+</html>

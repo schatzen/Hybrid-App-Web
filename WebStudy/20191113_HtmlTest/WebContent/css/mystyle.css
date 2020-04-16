@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+div#disp{ 
+	
+	width: 200px;
+	height: 100px;
+	/*  color지정   : #rrggbb  */
+	background-color: #004080;
+	/* margin: 외부간격 */
+	margin-top: 20px;
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+ul#main_menu {
+	list-style: none;
+}
+
+/* 하위요소 표현 selector 
+   부모 > 자식 : 직계만 해당
+   부모   자식 : 모두자식요소 해당
+*/
+ul#main_menu > li{
+	
+	display: inline-block; 
+	width:  150px;
+	margin-right: 50px;
+}
+
+ul#main_menu > li >a {
+	display: inline-block;
+	width:  150px;
+	border: 1px solid #ffff80;
+	text-align: center;
+	text-decoration: none;/* 밑줄제거 */
+    color: #0080c0; 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* a tag에 마우스가 올라가면 */
+ul#main_menu > li >a:hover{
+	border: 1px solid red;
+	color: red; 
+}
+
+
+
+
+
+

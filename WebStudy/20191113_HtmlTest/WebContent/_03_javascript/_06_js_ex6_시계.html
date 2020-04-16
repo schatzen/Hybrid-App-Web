@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  div#disp{
+     width: 250px;
+     height: 80px;
+     background-color: black;
+     color: white;
+     font-size: 40pt;
+     font-weight: bold;
+     text-align: center;
+  }
+  
+  div#disp2 > div{
+     margin:0;
+     padding: 0;
+  	 width: 80px;
+     height: 80px;
+     background-color: white;
+     color: white;
+     font-size: 40pt;
+     font-weight: bold;
+     text-align: center;
+     display: inline-block;
+     text-shadow: 2px 2px 2px black;
+  
+  }
+  
+  
+</style>
+
+<script type="text/javascript">
+/* 
+  자바스크립트 타이머
+  setTimeout("호출함수();", 시간) <= 1회성
+  setInterval("호출함수();",시간) <= 지속적
+*/
+  setInterval("time_display();",500);
+  
+  var bColor=false;
+  function time_display(){
+	  //console.log("----");//F12->Console창에서 확인
+	  //현재 시스템 시간 구하기
+	  var today = new Date();
+	  
+	  var hour   = today.getHours()  +'';
+	  var minute = today.getMinutes()+'';
+	  var second = today.getSeconds()+'';
+	  
+	  //string 함수... length,substring(),charAt(index),replace()
+	  document.title = second.length;
+	  
+	  if(hour.length==1)
+		  hour = '0' + hour;
+	  
+	  if(minute.length==1)
+		  minute = '0' + minute;
+	  
+	  if(second.length==1)
+		  second = '0' + second;
+	  
+	  //Toggle
+	  bColor = !bColor;// true<->false
+	  
+	  if(bColor){
+		  document.getElementById("colon1").style.color = 'red';
+		  document.getElementById("colon2").style.color = 'red';
+	  }
+	  else{
+		  document.getElementById("colon1").style.color = 'white';
+		  document.getElementById("colon2").style.color = 'white';
+	  }
+	  
+	  
+	  //console.log(second);
+	  var str_time = hour + ":" + minute + ":" + second;
+	  // <div> <p> <span> ... tag사이에 값을 넣을때는 innerHTML사용
+	  document.getElementById("disp").innerHTML = str_time;
+	  
+	  document.getElementById("h").innerHTML = hour;
+	  document.getElementById("m").innerHTML = minute;
+	  document.getElementById("s").innerHTML = second;
+	  
+  }
+
+</script>
+
+</head>
+<body>
+<div id="disp" >00</div>
+
+<div id="disp2">
+	<div id="h"></div>
+	<div id="colon1" style="width:20px;">:</div>
+	<div id="m"></div>
+	<div id="colon2" style="width:20px;">:</div>
+	<div id="s"></div>
+</div>
+
+</body>
+</html>

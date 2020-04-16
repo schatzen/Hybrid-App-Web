@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;context-6-jsonconverter_3_2_5_later.xml&apos; to &apos;20191227_SpringVisit/src/main/resources/config.spring.context&apos;&#x0D;&#x0A;- Original project: &apos;20200103_SpringJSON_3_2_5_later&apos;&#x0D;&#x0A;- Destination element: &apos;20191227_SpringVisit/src/main/resources/config.spring.context&apos;&#x0D;&#x0A;- Original element: &apos;context-6-jsonconverter_3_2_5_later.xml&apos;" description="Copy file" destination="=20191227_SpringVisit/src\/main\/resources&lt;config.spring.context" element1="src/main/resources/config/spring/context/context-6-jsonconverter_3_2_5_later.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579156692543" units="0" version="1.0"/>
+</session>

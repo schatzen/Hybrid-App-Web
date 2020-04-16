@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;util.NaverSerachUtil&apos; to &apos;NaverSearchUtil&apos;&#x0D;&#x0A;- Original project: &apos;20191210_XmlTest&apos;&#x0D;&#x0A;- Original element: &apos;util.NaverSerachUtil&apos;&#x0D;&#x0A;- Renamed element: &apos;util.NaverSearchUtil&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;NaverSerachUtil&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;util{NaverSerachUtil.java[NaverSerachUtil" matchStrategy="1" name="NaverSearchUtil" qualified="false" references="true" similarDeclarations="false" stamp="1575950549424" textual="false" version="1.0"/>
+</session>
