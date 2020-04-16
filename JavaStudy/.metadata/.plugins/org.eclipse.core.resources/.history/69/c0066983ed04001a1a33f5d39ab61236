@@ -1,0 +1,42 @@
+package service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBService {
+
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//Single-ton : 객체1개만 생성해서 서비스하자
+	static DBService single = null;
+
+	public static DBService getInstance() {
+		if (single == null)
+			single = new DBService();
+		return single;
+	}
+	
+	public Connection getConnection() {
+		Connection conn = null;
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user= "test";
+		String pwd = "test";
+		
+		conn = DriverManager.getConnection(url,user,pwd);
+		
+		return conn;
+	}
+	
+	
+	
+	
+	
+	
+}

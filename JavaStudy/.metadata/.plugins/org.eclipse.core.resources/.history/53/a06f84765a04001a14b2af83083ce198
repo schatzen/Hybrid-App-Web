@@ -1,0 +1,89 @@
+package test;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+
+public class TableTest extends JFrame {
+
+	JTable jtb_display;
+	
+//--JTable배치모델 선언
+	class MyTableModel extends AbstractTableModel
+	{
+		
+		
+		@Override
+		public String getColumnName(int column) {
+			// TODO Auto-generated method stub
+			return super.getColumnName(column);
+		}
+
+
+
+		@Override
+		public int getColumnCount() {
+			// TODO Auto-generated method stub
+			return 5;
+		}
+		
+		
+
+		@Override
+		public int getRowCount() {
+			// TODO Auto-generated method stub
+			return 10;
+		}
+	
+		
+	
+		@Override
+		public Object getValueAt(int row, int col) {
+			// TODO Auto-generated method stub
+			String str = String.format("(%d,%d)",row,col);
+			return str;
+		}
+	}
+	
+	
+	public TableTest() {
+		// TODO Auto-generated constructor stub
+		super("title");
+
+		init_center();
+		
+		//JTable배치모델 적용
+		jtb_display.setModel(new MyTableModel());
+		
+		//위치
+		setLocation(200, 100);
+
+		//크기
+		//setSize(300, 300);
+		setResizable(false);
+		pack();
+
+		//보여줘라
+		setVisible(true);
+
+		//종료
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void init_center() {
+		// TODO Auto-generated method stub
+		jtb_display = new JTable();
+		JScrollPane jsp = new JScrollPane(jtb_display);
+		jsp.setPreferredSize(new Dimension(400, 300));
+		this.add(jsp,BorderLayout.CENTER);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TableTest();
+	}
+}

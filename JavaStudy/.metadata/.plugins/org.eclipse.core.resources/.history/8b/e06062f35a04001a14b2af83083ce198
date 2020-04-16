@@ -1,0 +1,9 @@
+package vo;
+
+public class PersonVo {
+
+	int no;
+	String name;
+	int age;
+	String tel;
+}

@@ -1,0 +1,34 @@
+package service;
+
+import java.sql.Connection;
+
+public class DBService {
+
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//Single-ton : 객체1개만 생성해서 서비스하자
+	static DBService single = null;
+
+	public static DBService getInstance() {
+		if (single == null)
+			single = new DBService();
+		return single;
+	}
+	
+	public Connection getConnection() {
+		
+	}
+	
+	
+	
+	
+	
+	
+}

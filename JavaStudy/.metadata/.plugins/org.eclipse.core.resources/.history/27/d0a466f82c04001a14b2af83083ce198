@@ -1,0 +1,57 @@
+package mymain;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class MyMain_DBTest {
+
+	//0순위 : ojdbc14.jar(반드시해야된다)
+	//        ojdbc50.jar ojdbc60.jar(안해도 된다)
+	// OrcleDriver Load
+	static {
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+		
+	
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		//1.Connection 얻어오기
+		String url 		= "jdbc:oracle:thin:@localhost:1521:xe";
+		String user		= "test";
+		String password	= "test";
+		Connection conn = DriverManager.getConnection(
+				                        url, user, password);
+		System.out.println("--success connection--");
+		
+		//2.SQL명령 처리객체 얻기
+		//  SQL-> DDL DCL DML 모든 SQL을 처리한다
+		Statement stmt = conn.createStatement();
+		
+		//테이블생성
+		//String sql = "create table ttt(no int)";
+		String sql = "drop table ttt";
+		//        전달된 sql명령 수행 -> Oracle전달
+        //        ->Oracle수행
+		//        ->처리결과를 stmt로 돌려준다 
+		int res = stmt.executeUpdate(sql);
+		
+		
+		
+		
+		
+		//닫기:열기 역순
+		stmt.close();
+		conn.close();	
+			
+		
+
+	}
+
+}

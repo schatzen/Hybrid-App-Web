@@ -1,0 +1,37 @@
+package mymain;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import oracle.jdbc.driver.OracleDriver;
+
+public class MyMain_DBTest {
+
+	//0순위 : ojdbc14.jar(반드시해야된다)
+	//        ojdbc50.jar ojdbc60.jar(안해도 된다)
+	// OrcleDriver Load
+	static {
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+		
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1.Connection 얻어오기
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		
+		Connection conn = DriverManager.getConnection(
+				                        url, user, password);
+				
+		
+		
+
+	}
+
+}

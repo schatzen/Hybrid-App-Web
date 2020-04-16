@@ -1,0 +1,18 @@
+package test;
+
+import java.sql.Connection;
+
+import service.DBService;
+
+public class TestConnection {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Connection conn = DBService.getInstance().getConnection();
+		System.out.println("--success--");
+		conn.close();
+		
+	}
+
+}

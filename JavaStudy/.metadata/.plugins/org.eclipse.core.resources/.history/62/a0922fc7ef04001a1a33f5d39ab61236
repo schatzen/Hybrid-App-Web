@@ -1,0 +1,11 @@
+package vo;
+
+/*
+ 3위일체
+ DB헤딩명 == VO속성명 == 입력화면 파라메터명(Html)
+*/
+public class SungVo {
+  int idx;
+  String name;
+  
+}

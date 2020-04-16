@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;성적관리_폼&apos; to &apos;20191111_성적관리&apos;" description="Rename resource &apos;성적관리_폼&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/성적관리_폼" name="20191111_성적관리" stamp="1573452585964" updateReferences="true"/>
+</session>

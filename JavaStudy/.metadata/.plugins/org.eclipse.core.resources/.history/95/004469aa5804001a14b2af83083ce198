@@ -1,0 +1,48 @@
+package test;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class TableTest extends JFrame {
+
+	JTable jtb_display;
+	
+	public TableTest() {
+		// TODO Auto-generated constructor stub
+		super("title");
+
+		init_center();
+		
+		
+		//위치
+		setLocation(200, 100);
+
+		//크기
+		//setSize(300, 300);
+		setResizable(false);
+		pack();
+
+		//보여줘라
+		setVisible(true);
+
+		//종료
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void init_center() {
+		// TODO Auto-generated method stub
+		jtb_display = new JTable();
+		JScrollPane jsp = new JScrollPane(jtb_display);
+		jsp.setPreferredSize(new Dimension(400, 300));
+		this.add(jsp,BorderLayout.CENTER);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TableTest();
+	}
+}

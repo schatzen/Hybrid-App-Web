@@ -1,0 +1,30 @@
+package dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import vo.SungVo;
+
+public class SungTBDao {
+
+	//Single-ton : 객체1개만 생성해서 서비스하자
+	static SungTBDao single = null;
+
+	public static SungTBDao getInstance() {
+		if (single == null)
+			single = new SungTBDao();
+		return single;
+	}
+	
+	//성적조회
+	public List<SungVo> selectList(){
+		
+		List<SungVo> list = new ArrayList<SungVo>();
+		
+		
+		return list;
+	}
+	
+	
+	
+}
