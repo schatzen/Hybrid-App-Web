@@ -1,7 +1,0 @@
-package mystrategy;
-
-public interface Flys {
-	
-	String fly();
-
-}
