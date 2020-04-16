@@ -1,0 +1,18 @@
+/*
+  정렬(sort)
+  : 형식)
+               1차정렬 [정렬방식],  2차정렬
+      order by 필드    [asc | desc],필드 [asc | desc]
+                       정렬방식은 생략하면 asc(오름차순)
+  select * from sawon
+  order by deptno asc,sasex asc
+  
+  select * from sawon
+  order by deptno
+
+
+
+
+
+
+*/

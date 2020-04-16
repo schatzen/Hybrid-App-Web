@@ -1,0 +1,22 @@
+[계정생성하기]
+1.관리자계정(system)만 다른계정을 생성/권한부여
+2.접속 : cmd창=> sqlplus system/oracle
+
+3.계정생성명령(DDL: Data Define Language)
+              (계정)              (암호)  
+  create user scott identified by tiger
+
+4.유저에게 권한부여(DCL: Data Control Language)
+  grant connect,resource to scott
+
+  cf)현재계정 확인하기
+     show user
+5.다른계정으로 접속하기
+  connect scott/tiger
+  conn    scott/tiger
+
+[ scott계정의 Sample Data생성하기 ]
+1.Oracle 10g =>C:\oraclexe\app\oracle\product\10.2.0\server\RDBMS\ADMIN
+  => scott.sql
+2.sqlplus scott/tiger 연결
+3.SQL> @scott <= 데이터 생성된다

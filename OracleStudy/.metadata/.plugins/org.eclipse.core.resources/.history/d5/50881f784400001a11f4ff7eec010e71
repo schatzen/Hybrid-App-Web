@@ -1,0 +1,22 @@
+/*
+
+--숫자형함수 : numeric함수
+  select 
+    floor(10.2),ceil(10.2),floor(-10.2),ceil(-10.2)
+  from dual
+
+
+  select
+    round(192.153,1),
+    round(192.153,-1),
+    round(196.153,-1) 
+  from dual; 
+  
+  select
+    trunc(192.153,1),
+    trunc(192.153,-1),
+    trunc(196.153,-1),
+    trunc(196.153,-2) 
+  from dual; 
+
+*/

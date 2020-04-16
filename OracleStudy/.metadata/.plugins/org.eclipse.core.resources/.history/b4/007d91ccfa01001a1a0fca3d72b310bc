@@ -1,0 +1,66 @@
+/*
+
+1)사원테이블 deptno FK설정
+alter table sawon 
+  add constraint fk_sawon_deptno
+                 foreign key(deptno)
+                 references dept(deptno)
+
+2)사원테이블 samgr FK설정                  
+alter table sawon
+  add constraint fk_sawon_samgr         
+                 foreign key(samgr)
+                 references sawon(sabun)
+
+3)고객테이블 godam FK설정                 
+alter table gogek
+  add constraint fk_gogek_godam
+                 foreign key(godam)
+                 references sawon(sabun)                                   
+                 
+##조인(join)
+: 2이상의 테입를 연결(결합)해서 조회하는 방식
+
+1.Cross Join : 조건없이 무조건 결합
+               A(n) x B(m) => n*m 
+
+2.inner join=>  1:1(equi join)
+
+3.outer join
+     left  outer join
+     right outer join
+     funll outer join
+
+4.self join          
+                                     
+                                                                         
+--ex) cross join
+                 20    5 
+  select * from sawon,dept
+  
+  [ANSI-92 SQL]
+  select * from sawon cross join dept
+  
+--ex) inner join
+  select * from sawon s , dept d
+  where s.deptno = d.deptno --결합조건
+        and
+        sapay > 3000        --일반검색조건
+         
+  
+  [ANSI-92 SQL]
+  select 
+    *                          -- on 결합조건
+  from sawon inner join dept  on sawon.deptno=dept.deptno 
+  where sapay > 3000           --일반검색조건 
+  
+  
+  
+  
+  
+                                                                                                                
+                                                                                                                                                                                     
+
+
+
+*/

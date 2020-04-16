@@ -1,0 +1,10 @@
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleXE)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=XE)(CID=(PROGRAM=C:\Program Files (x86)\CA\AllFusion ERwin Data Modeler r7\ERwin.exe)(HOST=DESKTOP-F2JENCS)(USER=tjoeun304))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 08-11¿ù-2019 13:03:46
+  Tracing not turned on.

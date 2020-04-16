@@ -1,0 +1,25 @@
+/*
+
+1)사원테이블 deptno FK설정
+alter table sawon 
+  add constraint fk_sawon_deptno
+                 foreign key(deptno)
+                 references dept(deptno)
+
+2)사원테이블 samgr FK설정                  
+alter table sawon
+  add constraint fk_sawon_samgr         
+                 foreign key(samgr)
+                 references sawon(sabun)
+
+3)고객테이블 godam FK설정                 
+alter table gogek
+  add constraint fk_gogek_godam
+                 foreign key(godam)
+                 references sawon(sabun)                                   
+                 
+                                     
+
+
+
+*/

@@ -1,0 +1,50 @@
+/*
+  정렬(sort)
+  : 형식)
+               1차정렬 [정렬방식],  2차정렬
+      order by 필드    [asc | desc],필드 [asc | desc]
+                       정렬방식은 생략하면 asc(오름차순)
+  select * from sawon
+  order by deptno asc,sasex asc
+  
+  select * from sawon
+  order by deptno
+
+
+
+--###Group by: 그룹별 통계
+  --부서별  인원수,급여합계,급여평균
+  select
+      deptno,
+      count(*) 인원수,
+      sum(sapay) 급여합계,
+      avg(sapay) 급여평균,
+      min(sapay) 최저급여,
+      max(sapay) 최고급여
+  from sawon
+  group by deptno 
+  order by deptno
+
+  --부서별,성별 인원수
+  select
+      deptno,sasex 
+      count(*)   인원수,
+      round(avg(sapay),0) 급여평균
+  from sawon
+  group by deptno,sasex
+  order by deptno,sasex
+
+
+  --입사월별 인원수
+  select 
+    to_char(sahire,'MM') 입사월,
+    count(*) 인원수
+  from sawon 
+  group by to_char(sahire,'MM')
+  order by to_char(sahire,'MM')
+  
+
+
+
+
+*/

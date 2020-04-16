@@ -1,0 +1,66 @@
+/*
+
+select * from sawon
+
+--##최불암과 동일한 부서 직원 추출
+
+1.최불암의 부서 확인
+select deptno from sawon where saname='최불암'
+
+2.추출된 부서을 이용해서 메인쿼리 수행
+select * from sawon 
+where deptno=(select deptno from sawon where saname='최불암')
+
+--##전도현과 직급이 동일한 직원 추출
+1.전도현 직급확인
+select sajob from sawon where saname='전도현'
+2.추출된 결과를 이용해서 주쿼리 수행
+select * from sawon
+where sajob=(select sajob from sawon where saname='전도현')
+
+--##고객테이블에서 류민과 동일한 지역(광역시)에 사는 고객 추출
+1.류민의 광역시 지역구한다
+select substr(goaddr,1,2) from gogek where goname='류민'
+2.추출된 결과를 이용해서 주쿼리 수행
+select * from gogek
+where substr(goaddr,1,2) = (select substr(goaddr,1,2) from gogek where goname='류민')
+
+
+
+
+--Q1.(사원테이블)전도현과 동일한 년봉을 받는 직원 추출
+     select * from sawon
+     where sapay = (select sapay from sawon where saname='전도현')
+--Q2.(사원테이블)최불암과 같은 달에 입사한 직원 추출
+     select * from sawon
+     where to_char(sahire,'MM') = (select to_char(sahire,'MM') from sawon where saname='최불암')
+--Q3.(사원테이블)이미자와 같은 계절에 입사한 직원 추출(★★★★★)
+                (데미무어)
+     select * from sawon
+     where  decode(
+                   floor(to_number(to_char(sahire,'MM'))/3),4,0,
+                   floor(to_number(to_char(sahire,'MM'))/3)
+                  )
+     =                        
+     (           
+       select decode(
+                     floor(to_number(to_char(sahire,'MM'))/3),4,0,
+                     floor(to_number(to_char(sahire,'MM'))/3)
+                    ) 
+       from sawon where saname='데미무어'
+     )                   
+
+--Q4.(고객테이블)마징가와 동일한 년대에 출생한 고객 추출(★★★)
+                 86-> 80년대 출생자
+     select * from gogek
+     where  substr(gojumin,1,1)=           
+            (select substr(gojumin,1,1) from gogek where goname='마징가')            
+
+--Q5.(고객테이블)짱가와 동일한 월에 태어난 고객 추출
+     select * from gogek
+     where substr(gojumin,3,2) = 
+           (select substr(gojumin,3,2) from gogek where goname='짱가')                  
+                 
+
+
+*/

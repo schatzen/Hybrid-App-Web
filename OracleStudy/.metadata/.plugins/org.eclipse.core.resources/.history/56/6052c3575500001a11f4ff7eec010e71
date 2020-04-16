@@ -1,0 +1,9 @@
+package ex;
+
+abstract class T{
+	
+}
+
+public class Test {
+ T t = new T();
+}

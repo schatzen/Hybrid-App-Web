@@ -1,0 +1,22 @@
+sys or system계정
+암호 : oracle
+
+localhost:8080/apex
+
+//Sample Database script화일
+C:\oraclexe\app\oracle\product\10.2.0\server\RDBMS\ADMIN
+
+scott계정데이터 생성
+1.sqlplus system/oracle
+2.@scott
+3.확인=>계정전환
+  conn[ect]  scott/tiger
+
+참고사이트
+예전: http://oracleclub.com
+현재: http://www.gurubee.net/
+
+##오라클 Driver화일
+ojdbc14.jar
+=>C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib
+

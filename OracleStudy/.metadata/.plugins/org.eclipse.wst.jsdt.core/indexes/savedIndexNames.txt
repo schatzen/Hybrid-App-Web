@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\MyStudy\OracleStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1912489783.index
+3079320153.index
+3035366389.index
+3742856482.index
+1028535842.index
+684694255.index

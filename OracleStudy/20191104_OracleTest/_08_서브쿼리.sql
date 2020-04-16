@@ -1,0 +1,141 @@
+/*
+
+select * from sawon
+
+--##최불암과 동일한 부서 직원 추출
+
+1.최불암의 부서 확인
+select deptno from sawon where saname='최불암'
+
+2.추출된 부서을 이용해서 메인쿼리 수행
+select * from sawon 
+where deptno=(select deptno from sawon where saname='최불암')
+
+--##전도현과 직급이 동일한 직원 추출
+1.전도현 직급확인
+select sajob from sawon where saname='전도현'
+2.추출된 결과를 이용해서 주쿼리 수행
+select * from sawon
+where sajob in (select sajob from sawon where saname='전도현')
+
+--##고객테이블에서 류민과 동일한 지역(광역시)에 사는 고객 추출
+1.류민의 광역시 지역구한다
+select substr(goaddr,1,2) from gogek where goname='류민'
+2.추출된 결과를 이용해서 주쿼리 수행
+select * from gogek
+where substr(goaddr,1,2) in (select substr(goaddr,1,2) from gogek where goname='류민')
+
+
+
+
+--Q1.(사원테이블)전도현과 동일한 년봉을 받는 직원 추출
+     select * from sawon
+     where sapay = (select sapay from sawon where saname='전도현')
+--Q2.(사원테이블)최불암과 같은 달에 입사한 직원 추출
+     select * from sawon
+     where to_char(sahire,'MM') = (select to_char(sahire,'MM') from sawon where saname='최불암')
+--Q3.(사원테이블)이미자와 같은 계절에 입사한 직원 추출(★★★★★)
+                (데미무어)
+     select * from sawon
+     where  decode(
+                   floor(to_number(to_char(sahire,'MM'))/3),4,0,
+                   floor(to_number(to_char(sahire,'MM'))/3)
+                  )
+     =                        
+     (           
+       select decode(
+                     floor(to_number(to_char(sahire,'MM'))/3),4,0,
+                     floor(to_number(to_char(sahire,'MM'))/3)
+                    ) 
+       from sawon where saname='데미무어'
+     )                   
+
+--Q4.(고객테이블)마징가와 동일한 년대에 출생한 고객 추출(★★★)
+                 86-> 80년대 출생자
+     select * from gogek
+     where  substr(gojumin,1,1)=           
+            (select substr(gojumin,1,1) from gogek where goname='마징가')            
+
+--Q5.(고객테이블)짱가와 동일한 월에 태어난 고객 추출
+     select * from gogek
+     where substr(gojumin,3,2) = 
+           (select substr(gojumin,3,2) from gogek where goname='짱가')                  
+                 
+###---다중행 서브쿼리 : 서브쿼리결과가 여러개 
+   ---장동건,안재욱이 소속된 부서 직원 추출
+   ---에러:단일 행 하위 질의에 2개 이상의 행이 리턴되었습니다.
+     select * from sawon
+     where deptno in ( select deptno from sawon 
+                       where saname in('안재욱','장동건')
+
+
+###집(통)계함수 : 
+     count(*)   : 전체레코드수
+     count(필드): 도메인내 필드수구하기(null포함안함)
+     sum(필드)  : 필드합 
+     avg(필드)  : 필드평균
+     min(필드)  : 최소값
+     max(필드)  : 최대값
+     
+     select
+        count(*)     전체사원수,
+        count(samgr) 부서장이아닌직원수,
+        sum(sapay)   전체급여합계,
+        avg(sapay)   전체급여평균,
+        min(sapay)   최저급여,
+        max(sapay)   최대급여,
+        min(sahire)  최초입사일자,
+        max(sahire)  최근입사일자
+     from sawon
+
+-- 직원중 최대급여자 추출
+   select * from sawon
+   where sapay = (select max(sapay) from sawon)
+   
+-- 직원중 급여평균보다 많이받는 직원 추출
+   select * from sawon
+   where sapay > (select avg(sapay) from sawon)
+   
+   
+-- 10번부서의 최대급여자 추출
+   --1)10번부서의 최대급여
+   select 
+      max(sapay) 
+   from sawon 
+   where deptno=10
+   
+   select * from sawon
+   where sapay = 
+       (select max(sapay) from sawon where deptno=10) 
+       and 
+       deptno=10   
+   
+   --각부서별 최대급여자를 추출
+   select * from sawon
+   where 
+         (sapay = (select max(sapay) from sawon 
+                  where deptno=10) 
+         and deptno=10)
+         or
+         (sapay = (select max(sapay) from sawon 
+                  where deptno=20) 
+         and deptno=20)
+         or
+         (sapay = (select max(sapay) from sawon 
+                  where deptno=30) 
+         and deptno=30)
+         or
+         (sapay = (select max(sapay) from sawon 
+                  where deptno=40) 
+         and deptno=40)
+   
+   --상관쿼리
+   select * from sawon s1
+   where sapay=
+         (select max(sapay) from sawon where deptno=s1.deptno)
+   
+   
+   
+
+
+*/

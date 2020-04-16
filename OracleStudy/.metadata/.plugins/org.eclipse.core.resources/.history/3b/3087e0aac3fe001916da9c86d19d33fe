@@ -1,0 +1,22 @@
+-- 1줄 주석
+/*
+    범위주석 
+*/
+
+/*
+
+1.계정생성 (DDL)
+              (계정)              (비번) 
+  create user test identified by test
+  
+2.권한부여 (DCL)  
+        (권한명)
+  grant connect,resource to test
+  
+  --권한회수
+  revoke connect from test
+  
+  
+  
+  
+*/

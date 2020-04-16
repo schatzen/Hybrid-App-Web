@@ -1,0 +1,89 @@
+/*
+  정렬(sort)
+  : 형식)
+               1차정렬 [정렬방식],  2차정렬
+      order by 필드    [asc | desc],필드 [asc | desc]
+                       정렬방식은 생략하면 asc(오름차순)
+  select * from sawon
+  order by deptno asc,sasex asc
+  
+  select * from sawon
+  order by deptno
+
+
+
+--###Group by: 그룹별 통계
+  --부서별  인원수,급여합계,급여평균
+  select
+      deptno,
+      count(*) 인원수,
+      sum(sapay) 급여합계,
+      avg(sapay) 급여평균,
+      min(sapay) 최저급여,
+      max(sapay) 최고급여
+  from sawon
+  group by deptno 
+  order by deptno
+
+  --부서별,성별 인원수
+  select
+      deptno,sasex 
+      count(*)   인원수,
+      round(avg(sapay),0) 급여평균
+  from sawon
+  group by deptno,sasex
+  order by deptno,sasex
+
+
+  --입사월별 인원수
+  select 
+    to_char(sahire,'MM') 입사월,
+    count(*) 인원수
+  from sawon 
+  group by to_char(sahire,'MM')
+  order by to_char(sahire,'MM')
+  
+  
+  --[고객테이블] 지역(광역시)별 인원수
+  select 
+    substr(goaddr,1,2) 지역,
+    count(*)  인원수 
+  from gogek
+  group by substr(goaddr,1,2)
+  order by substr(goaddr,1,2)
+  
+  --[고객테이블] 성별 인원수
+  --   123456789
+  --   760815-1325467
+  
+  select
+  	case
+  	   when to_number(substr(gojumin,8,1)) in(1,3,5,7) then '남자'
+  	   else '여자'
+  	end as gender,
+  	count(*) 인원수
+  from gogek
+  group by  case
+		  	   when to_number(substr(gojumin,8,1)) in(1,3,5,7) then '남자'
+		  	   else '여자'
+		  	end
+           
+  Q1.[사원테이블] 직급별 인원수
+  
+  Q2.[사원테이블] 부서별,직급별 인원수
+  
+  Q3.[사원테이블] 입사년도별 인원수
+     1988  1
+     1989  1
+  
+  Q4.[사원테이블] 입사년대별 인원수
+     1980년대  3
+     1990년대  4
+     
+  Q5.[고객테이블] 고객 출생계절별 인원수     
+
+  
+
+
+
+*/
