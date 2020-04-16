@@ -1,7 +1,0 @@
-eclipse
-편집위치(환경)
-C:\MyStudy\WebStudy\20191126_Servlet_Parameter
-
-실행위치(환경)
-C:\MyStudy\WebStudy\.metadata\.plugins\org.eclipse.wst.server.core
-   \tmp0\wtpwebapps\20191126_Servlet_Parameter
